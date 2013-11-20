@@ -7,6 +7,7 @@ gem 'nokogiri'
 gem 'delayed_job_active_record'
 gem "daemons"
 
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
