@@ -5,6 +5,11 @@
   <%= @scrape.title %>
 </p>
 
+<%if @scrape.result_f  %>
+  <%=link_to "results", @scrape.result_f.url  %></br>
+  <% end -%>
+
+
 
 <%= link_to 'Edit', edit_scrape_path(@scrape) %> |
 <%= link_to 'Back', scrapes_path %>

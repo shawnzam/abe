@@ -8,10 +8,6 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 set -e
 
-if [ ! -z "$OPENSHIFT_POSTGRESQL_DB_HOST" ]; then
-  export RAILS_DB="postgresql"
-fi
-
 if [ ! -z "$OPENSHIFT_MYSQL_DB_HOST" ]; then
   export RAILS_DB="mysql"
 fi

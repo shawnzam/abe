@@ -8,7 +8,7 @@ class Scrape < ActiveRecord::Base
 
 
 def scrape
-  
+
   @divider = "----------------------------------------\n"
   @results = []
   if links_f
@@ -28,8 +28,10 @@ def scrape
     File.write(filename, theFile)
     # foo = File.open(File.expand_path(filename))
     # puts theFile
+    DoneMailer.done(self).deliver
     self.result_f = File.open("2013-11-20-out.csv")
     self.save
+
     # puts "#{@divider}Done!\nA result file has been written to #{File.expand_path(filename)}"
 end
 
