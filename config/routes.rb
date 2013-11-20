@@ -1,4 +1,8 @@
 RailsApp::Application.routes.draw do
+  resources :scrapes
+  root :to => 'scrapes#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

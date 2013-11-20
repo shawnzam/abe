@@ -2,13 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 gem 'rack', '~> 1.4.5'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'nokogiri'
+gem 'delayed_job_active_record'
+gem "daemons"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
   gem 'mysql2'
-  gem 'pg'
 end
 
 group :development, :test do

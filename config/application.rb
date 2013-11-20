@@ -1,6 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'nokogiri'  
+require 'open-uri'
+require 'csv'
+require 'uri'
+require 'JSON'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
