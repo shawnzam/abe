@@ -13,4 +13,4 @@
 # Application start and stop is subject to different timeouts
 # throughout the system.
 
- RAILS_ENV=production bundle exec rake jobs:work
+ # RAILS_ENV=production bundle exec rake jobs:work
