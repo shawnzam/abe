@@ -17,20 +17,21 @@ def scrape
     end
   end
 
-  filename = "#{Date.today}-out.csv"
+  filename = "file-#{self.id}-out.csv"
   column_names = @results.first.keys
-  theFile =CSV.generate do |csv|
+  csvString =CSV.generate do |csv|
     csv << column_names
     @results.each do |x|
         csv << x.values
       end
     end
-    File.write(filename, theFile)
+    File.write(filename, csvString)
     # foo = File.open(File.expand_path(filename))
-    # puts theFile
-    DoneMailer.done(self).deliver
-    self.result_f = File.open("2013-11-20-out.csv")
+    # puts csvString
+    
+    self.result_f = File.open(File.expand_path(filename))
     self.save
+    DoneMailer.done(self).deliver
 
     # puts "#{@divider}Done!\nA result file has been written to #{File.expand_path(filename)}"
 end
