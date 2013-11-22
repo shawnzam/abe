@@ -14,3 +14,5 @@
 # throughout the system.
 
  # RAILS_ENV=production bundle exec rake jobs:work
+cd $OPENSHIFT_REPO_DIR
+RAILS_ENV=production script/delayed_job -n 2 start &
