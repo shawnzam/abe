@@ -47,7 +47,7 @@ end
     result_count = page.css('.pagerange').text.scan(/(\d*) Results/)[0] rescue nil
     puts "Found #{result_count[0]} results"
     terms = page.css("#pageTitleHeader").text
-    result_details = page.css(".result-data")
+    result_details = page.css(".result")
     puts "Scraping #{result_details.size} results from front page"
     result_details.each do |r|
       result = {}
@@ -64,9 +64,10 @@ end
       r.css(".shipping").each do |p|
         r.at_css(".price").nil? ? result[:shipping_price] = nil : result[:shipping_price] = p.css(".price").text
       end
-      page.css(".result-description p").each do |d|
-        result[:description] = d.text
-      end
+       r.at_css("p").nil? ? result[:description] = nil : result[:description] = r.css("p").text
+      # page.css(".result-description p").each do |d|
+      #   result[:description] = d.text
+      # end
       @results << result
     end
   end
