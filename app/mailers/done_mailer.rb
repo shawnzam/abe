@@ -9,7 +9,7 @@ class DoneMailer < ActionMailer::Base
     @greeting = "Job is done"
     @parse = parse
     attachments[parse.result_f_file_name] = File.read(parse.result_f.path)
-    mail to: "zamechek@wharton.upenn.edu", from: "shawnzam@gmail.com", subject: "foof"
+    mail to: "augerdownbooks@gmail.com", from: "shawnzam@gmail.com", subject: "foof"
     
     # attachments[report.pdf_file_file_name] = File.read(report.pdf_file.path)
   end
